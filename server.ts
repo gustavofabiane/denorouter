@@ -58,6 +58,7 @@ export class Server {
         message: "resource not found",
       }, Status.NotFound);
     } catch (e) {
+      console.error("Error", e)
       res = json({ error: e }, Status.InternalServerError);
     }
     console.info(new Date().toISOString(), req.method, req.url, res.status);
