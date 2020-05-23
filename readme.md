@@ -11,7 +11,7 @@ import { server } from "https://github.com/gustavofabiane/denorouter/server.ts"
 import { json } from "https://github.com/gustavofabiane/denorouter/response.ts"
 
 const app = server()
-app.get("/hello/:name", (req, args) => json({
+app.get("/hello/:name", (req, { name }) => json({
     hello: `${name}!`
 }))
 
